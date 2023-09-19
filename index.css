@@ -6,12 +6,22 @@ html, body {
     color: #432000;
     user-select: none;
 }
-
-.container {
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    top: 100px;
+}
+.input-wrapper {
     display: flex;
     flex-direction: column;
     max-width: 320px;
-    margin: 30px auto;
 }
 
 img {
@@ -68,4 +78,39 @@ ul li {
 ul li:hover {
     background-color: #FFECC7;
     cursor: pointer;
+}
+.alert-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    display: none;
+}
+.active{
+    display: flex;
+}
+.alert{
+    text-align: center;
+    top: 150px;
+    position: absolute;
+    background: #ffffff;
+    color: #000000;
+    min-width: 500px;
+    max-width: 90%;
+    height: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    display: grid;
+}
+.close-btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.close-btn-container button{
+    padding: 2px;
+    width: 50px;
 }

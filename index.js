@@ -12,13 +12,18 @@ const shoppingListInDB = ref(database, "shoppingList")
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
+const alertContainer = document.querySelector(".alert-container");
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
+    if (inputFieldEl.value === "" ) {
+        alertContainer.classList.add( "active");
+    }else{
+        let inputValue = inputFieldEl.value
     
     push(shoppingListInDB, inputValue)
     
     clearInputFieldEl()
+    }
 })
 
 onValue(shoppingListInDB, function(snapshot) {
@@ -63,3 +68,11 @@ function appendItemToShoppingListEl(item) {
     
     shoppingListEl.append(newEl)
 }
+
+document.getElementById("close-btn1").addEventListener("click", ()=> {
+    alertContainer.classList.remove( "active");
+});
+
+document.getElementById("close-btn2").addEventListener("click", ()=> {
+    alertContainer.classList.remove( "active");
+})
