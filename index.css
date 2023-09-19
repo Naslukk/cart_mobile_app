@@ -98,8 +98,8 @@ ul li:hover {
     position: absolute;
     background: #ffffff;
     color: #000000;
-    min-width: 500px;
-    max-width: 90%;
+    width: 90%;
+    max-width: 500px;
     height: 200px;
     padding: 5px;
     border-radius: 10px;
